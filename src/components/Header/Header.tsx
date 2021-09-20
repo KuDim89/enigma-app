@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { Button } from '../Button/Button';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 
 interface HeaderProps {
   user?: {};

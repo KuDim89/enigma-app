@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { Header } from '../Header/Header';
-import styles from './Page.module.css';
+import styles from './Page.module.scss';
 
 interface PageProps {
   user?: {};

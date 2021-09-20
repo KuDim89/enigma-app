@@ -55,15 +55,19 @@ li {
   margin-bottom: 40px;
 }
 
-.tipWrapper svg {
-  display: inline-block;
-  height: 12px;
-  width: 12px;
-  margin-right: 4px;
-  vertical-align: top;
-  margin-top: 3px;
+.tipWrapper {
+  svg {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    margin-right: 4px;
+    vertical-align: top;
+    margin-top: 3px;
+  }
 }
 
-.tipWrapper svg path {
-  fill: #1ea7fd;
+.tipWrapper {
+  svg path {
+    fill: #1ea7fd;
+  }
 }

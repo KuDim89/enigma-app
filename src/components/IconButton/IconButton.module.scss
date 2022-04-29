@@ -1,0 +1,64 @@
+@import '../../scssHelpers/index';
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  padding: px2rem(8);
+  border: none;
+  border-radius: px2rem(30);
+  cursor: pointer;
+  &--primary {
+    background-color: rgba(var(--t_color-1), 0.08);
+    box-shadow: rgba(var(--t_color-1), 0.15) 0 0 0 px2rem(1) inset;
+    @include bgTransition();
+    &:hover {
+      background-color: rgba(var(--t_color-1), 0.16);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    @include bgTransition();
+    &:hover {
+      background-color: rgba(var(--t_color-1), 0.16);
+    }
+  }
+
+  span {
+    font-weight: 700;
+    color: rgb(var(--t_color-1));
+  }
+
+  &--small {
+    @include fontSize(12);
+    svg {
+      width: px2rem(20);
+      height: px2rem(20);
+    }
+    span {
+      margin: px2rem(0) px2rem(8);
+    }
+  }
+
+  &--medium {
+    @include fontSize(14);
+    svg {
+      width: px2rem(26);
+      height: px2rem(26);
+    }
+    span {
+      margin: px2rem(0) px2rem(12);
+    }
+  }
+
+  &--large  {
+    @include fontSize(18);;
+    svg {
+      width: px2rem(25);
+      height: px2rem(35);
+    }
+    span {
+      margin: px2rem(0) px2rem(18);
+    }
+  }
+}

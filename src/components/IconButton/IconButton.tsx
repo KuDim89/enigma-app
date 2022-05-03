@@ -27,7 +27,7 @@ interface IconButtonProps {
 /**
  * Primary UI component for user interaction
  */
-const IconButton:FC<IconButtonProps> = ({
+export const IconButton:FC<IconButtonProps> = ({
   primary = false,
   size = 'medium',
   label,
@@ -45,5 +45,3 @@ const IconButton:FC<IconButtonProps> = ({
     </button>
   );
 }
-
-export default IconButton;

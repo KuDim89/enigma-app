@@ -1,4 +1,4 @@
-@import "./src/index";
+@import "./src/scssHelpers/index";
 
 .wrapper {
   display: flex;
@@ -11,14 +11,6 @@
     box-shadow: 0 px2rem(6) px2rem(5) rgba($color-grey, 0.3);
     @include bgTransition()
   }
-}
-
-.logoName {
-  margin: px2rem(6) px2rem(0) px2rem(6) px2rem(10);
-  color: rgb(var(--t_color-1));
-  @include fontSize(20);
-  font-weight: 700;
-  @include colorTransition();
 }
 
 button + button {

@@ -1,8 +1,9 @@
+@use "sass:math";
 @import "vars";
 
 @function strip-units($value) {
   @if type-of($value) == 'number' {
-    @return $value / ($value * 0 + 1);
+    @return math.div($value, $value * 0 + 1);
   } @else {
     @warn '`#{$value}` is not a number';
 
@@ -14,7 +15,7 @@
   $pixels: strip-units($pixels);
   $context: strip-units($context);
 
-  @return ($pixels / $context) * 1rem;
+  @return math.div($pixels, $context) * 1rem;
 }
 
 @function hex2rgb($hexColor) {

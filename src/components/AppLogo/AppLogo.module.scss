@@ -1,0 +1,9 @@
+@import "./src/index";
+
+.logoName {
+  margin: px2rem(6) px2rem(0) px2rem(6) px2rem(10);
+  color: rgb(var(--t_color-1));
+  @include fontSize(20);
+  font-weight: 700;
+  @include colorTransition();
+}

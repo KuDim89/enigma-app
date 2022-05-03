@@ -1,10 +1,13 @@
 import React, { FC } from 'react';
 
-import { Button } from '../Button/Button';
 import styles from './Header.module.scss';
-import IconButton from '../IconButton/IconButton';
+import { Button } from '../Button/Button';
+import { IconButton } from '../IconButton/IconButton';
+
+
 import { DarkMode, EnigmaLogo, LightMode } from '../../assets';
 import { useTheme } from '../../hooks';
+import AppLogo from '../AppLogo/AppLogo';
 
 // todo: Need configure theme with colors ['#FF5E13', '#002244'];
 
@@ -30,16 +33,15 @@ export const Header: FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccou
   return (
     <header>
       <div className={styles.wrapper}>
-        <div style={{ display: "flex", alignItems: 'center', cursor: 'pointer'}} >
-          <EnigmaLogo color='#FF0000' width={48} height={50} />
-          <h1 className={styles.logoName}>Enigma</h1>
-        </div>
+        <AppLogo styleForName={{textTransform: 'capitalize'}}>
+          <EnigmaLogo color='#FF5E13' width={48} height={50}/>
+        </AppLogo>
         <div style={{ display: "flex", alignItems: 'center' }}>
           {theme === "dark" ?
-          <IconButton size="small" onClick={handleLightThemeClick}>
+          <IconButton primary label="Click me!" size="small" onClick={handleLightThemeClick}>
             <LightMode color='#FF5E13' />
           </IconButton> :
-          <IconButton size="small" onClick={handleDarkThemeClick}>
+          <IconButton primary label="Click me!" size="small" onClick={handleDarkThemeClick}>
             <DarkMode color='#FF5E13' />
           </IconButton>}
           <div className={styles.separator} />

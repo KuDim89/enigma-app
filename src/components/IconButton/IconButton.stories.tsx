@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import IconButton from './IconButton';
+import { IconButton } from './IconButton';
 import { LightMode } from '../../assets';
 
 export default {
@@ -37,15 +37,29 @@ const Template: ComponentStory<typeof IconButton> = (args) => (
     </IconButton>
 )
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const WithLabel = Template.bind({});
+WithLabel.args = {
   primary: true,
   size: 'small',
-  label: 'Button',
+  label: 'Click me!',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
+export const Simple = Template.bind({});
+Simple.args = {
   primary: false,
   size: 'small'
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  primary: true,
+  size: 'medium',
+  label: 'Click me!',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  primary: true,
+  size: 'large',
+  label: 'Click me!',
 };

@@ -1,0 +1,27 @@
+@import "scssHelpers/index";
+
+/* light theme */
+:root[data-theme='light'] {
+  --t_color-1: #{hex2rgb($color-black)};
+  --t_color-2: #{$color-grey_light};
+}
+
+/* dark theme */
+:root[data-theme='dark'] {
+  --t_color-1: #{hex2rgb($color-white)};
+  --t_color-2: #{$color-grey_dark};
+}
+
+body {
+  margin: px2rem(0);
+  background-color: var(--t_color-2);
+  font-family: $mainFont;
+  @include bgTransition();
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: $codeFont
+}
+

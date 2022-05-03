@@ -1,30 +1,39 @@
-.storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@import '../../scssHelpers/index';
+
+.enigma-button {
+  border: none;
+  border-radius: px2rem(30);
   font-weight: 700;
-  border: 0;
-  border-radius: 3em;
   cursor: pointer;
-  display: inline-block;
-  line-height: 1;
   &--primary {
-    color: white;
-    background-color: #1ea7fd;
+    background-color: $color-primary;
+    box-shadow: rgba($color-primary_darken, 0.15) 0 0 0 px2rem(1) inset;
+    color: $color-white;
+    @include bgTransition();
+    &:hover {
+      background-color: $color-primary_darken;
+    }
   }
   &--secondary {
-    color: #333;
-    background-color: transparent;
-    box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;
+    background-color: rgba(var(--t_color-1), 0.08);
+    box-shadow: rgba(var(--t_color-1), 0.15) 0 0 0 px2rem(1) inset;
+    color: rgb(var(--t_color-1));
+    @include colorTransition();
+    &:hover {
+      background-color: rgba(var(--t_color-1), 0.16);
+      @include bgTransition();
+    }
   }
   &--small {
-    font-size: 12px;
-    padding: 10px 16px;
+    padding: px2rem(10) px2rem(16);
+    @include fontSize(12);
   }
   &--medium {
-    font-size: 14px;
-    padding: 11px 20px;
+    padding: px2rem(11) px2rem(20);
+    @include fontSize(14);
   }
   &--large {
-    font-size: 16px;
-    padding: 12px 24px;
+    padding: px2rem(12) px2rem(24);
+    @include fontSize(16);;
   }
 }

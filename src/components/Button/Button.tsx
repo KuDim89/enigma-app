@@ -34,11 +34,11 @@ export const Button: FunctionComponent<ButtonProps> = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? styles['storybook-button--primary'] : styles['storybook-button--secondary'];
+  const mode = primary ? styles['enigma-button--primary'] : styles['enigma-button--secondary'];
   return (
     <button
       type="button"
-      className={[styles['storybook-button'], styles[`storybook-button--${size}`], mode].join(' ')}
+      className={[styles['enigma-button'], styles[`enigma-button--${size}`], mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >

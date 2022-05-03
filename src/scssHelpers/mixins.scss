@@ -1,0 +1,17 @@
+@use "sass:math";
+
+@import "vars";
+@import "functions";
+
+@mixin fontSize($sizeValue, $line: $sizeValue * 1.5) {
+  font-size: math.div(strip-units($sizeValue), strip-units($mainFontSize)) * 1rem;
+  line-height: math.div(strip-units($sizeValue) * 1.5, strip-units($mainFontSize)) * 1rem;
+}
+
+@mixin bgTransition($duration: 200) {
+  transition: background-color #{$duration}ms linear;
+}
+
+@mixin colorTransition($duration: 500) {
+  transition: color #{$duration}ms linear;
+}

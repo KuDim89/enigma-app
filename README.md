@@ -39,8 +39,31 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+### `yarn storybook`
+
+Storybook is an open source tool for building UI components and pages in isolation. It streamlines UI development, testing, and documentation. The storybook will open page with react components in separately page after that you can use them or create new and after that use in your app.
+
+Runs the Storybook in the development mode.\
+Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
+
+### `yarn build-storybook`
+
+Storybook will create a static web application at the path you specify. This can be served by any web server.
+
+### `json-server`
+
+JSON Server is a Node Module that you can use to create demo REST JSON services within a short span of minutes. All we need to do is have a JSON file as sample data.
+
+Runs the JSON-server in the development mode.\
+Open [http://localhost:3004](http://localhost:3004) to view it in the browser.
+
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Storybook - [Storybook documentation](https://storybook.js.org/).
+
+JSON-server - [JSON-server documentation](https://github.com/typicode/json-server).

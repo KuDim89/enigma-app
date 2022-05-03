@@ -1,7 +1,15 @@
 import React, { FC } from 'react';
 
-import { Button } from '../Button/Button';
 import styles from './Header.module.scss';
+import { Button } from '../Button/Button';
+import { IconButton } from '../IconButton/IconButton';
+
+
+import { DarkMode, EnigmaLogo, LightMode } from '../../assets';
+import { useTheme } from '../../hooks';
+import AppLogo from '../AppLogo/AppLogo';
+
+// todo: Need configure theme with colors ['#FF5E13', '#002244'];
 
 interface HeaderProps {
   user?: {};
@@ -10,38 +18,43 @@ interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export const Header: FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
-  <header>
-    <div className={styles.wrapper}>
-      <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none" fillRule="evenodd">
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
-            />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
-            />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
-            />
-          </g>
-        </svg>
-        <h1>Acme</h1>
+
+export const Header: FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => {
+  const {theme, setTheme} = useTheme();
+
+  const handleLightThemeClick = () => {
+    setTheme('light');
+  }
+
+  const handleDarkThemeClick = () => {
+    setTheme('dark');
+  }
+
+  return (
+    <header>
+      <div className={styles.wrapper}>
+        <AppLogo styleForName={{textTransform: 'capitalize'}}>
+          <EnigmaLogo color='#FF5E13' width={48} height={50}/>
+        </AppLogo>
+        <div style={{ display: "flex", alignItems: 'center' }}>
+          {theme === "dark" ?
+          <IconButton primary label="Click me!" size="small" onClick={handleLightThemeClick}>
+            <LightMode color='#FF5E13' />
+          </IconButton> :
+          <IconButton primary label="Click me!" size="small" onClick={handleDarkThemeClick}>
+            <DarkMode color='#FF5E13' />
+          </IconButton>}
+          <div className={styles.separator} />
+          {user ? (
+            <Button size="small" onClick={onLogout} label="Log out" />
+          ) : (
+            <>
+              <Button size="small" onClick={onLogin} label="Log in" />
+              <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            </>
+          )}
+        </div>
       </div>
-      <div>
-        {user ? (
-          <Button size="small" onClick={onLogout} label="Log out" />
-        ) : (
-          <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
-          </>
-        )}
-      </div>
-    </div>
-  </header>
-);
+    </header>
+  )
+};

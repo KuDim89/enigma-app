@@ -1,26 +1,25 @@
+@import "./src/scssHelpers/index";
+
 .wrapper {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-svg {
-  display: inline-block;
-  vertical-align: top;
-}
-
-h1 {
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 1;
-  margin: 6px 0 6px 10px;
-  display: inline-block;
-  vertical-align: top;
+  padding: px2rem(15) px2rem(20);
+  border-bottom: px2rem(1) solid rgba(var(--t_color-1), 0.1);
+  box-shadow: 0 px2rem(3) px2rem(5) rgba($color-grey, 0.3);
+  &:hover {
+    box-shadow: 0 px2rem(6) px2rem(5) rgba($color-grey, 0.3);
+    @include bgTransition()
+  }
 }
 
 button + button {
-  margin-left: 10px;
+  margin-left: px2rem(10);
+}
+
+.separator {
+  width: px2rem(1);
+  height: px2rem(50);
+  margin: px2rem(0) px2rem(10);
+  background: rgba(var(--t_color-1), 0.16);
 }

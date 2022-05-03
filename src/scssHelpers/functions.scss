@@ -1,0 +1,23 @@
+@use "sass:math";
+@import "vars";
+
+@function strip-units($value) {
+  @if type-of($value) == 'number' {
+    @return math.div($value, $value * 0 + 1);
+  } @else {
+    @warn '`#{$value}` is not a number';
+
+    @return $value;
+  }
+}
+
+@function px2rem($pixels, $context: $mainFontSize) {
+  $pixels: strip-units($pixels);
+  $context: strip-units($context);
+
+  @return math.div($pixels, $context) * 1rem;
+}
+
+@function hex2rgb($hexColor) {
+  @return #{red($hexColor)},#{green($hexColor)},#{blue($hexColor)};
+}
